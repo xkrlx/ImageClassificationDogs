@@ -6,6 +6,7 @@ namespace ImageClassifiationDogs
         public DogsImageClassification()
         {
             InitializeComponent();
+
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -26,6 +27,11 @@ namespace ImageClassifiationDogs
 
 
             var imageLocation = pictureBox.ImageLocation;
+
+            if (imageLocation == null)
+            {
+                imageLocation = "test_golden_retriever.jpg";
+            }
             var imageBytes = File.ReadAllBytes(imageLocation);
             MLModel1.ModelInput sampleData = new MLModel1.ModelInput()
             {
@@ -36,15 +42,18 @@ namespace ImageClassifiationDogs
             var result = MLModel1.Predict(sampleData);
 
 
-            if(result.Score.Max() < 60) {
-                MessageBox.Show("Dog breed recognition problem");
-            }
-            else
-            {
-                MessageBox.Show(result.PredictedLabel);
-            }
+            /* if(result.Score.Max() < 30) {
+                 MessageBox.Show("Dog breed recognition problem");
+             }
+             else
+             {*/
+            MessageBox.Show(result.PredictedLabel);
+            // }
 
-           
+            label1.Text = result.PredictedLabel;
+            label2.Text = result.Score.Max().ToString("0.00" + " %");
+
+
         }
     }
 }

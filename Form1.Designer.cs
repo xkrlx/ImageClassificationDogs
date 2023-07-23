@@ -32,12 +32,16 @@
             pictureBox = new PictureBox();
             btnBrowse = new Button();
             btnClassify = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
             // pictureBox
             // 
-            pictureBox.Location = new Point(12, 12);
+            pictureBox.Image = global::DogsImageClassification.Properties.Resources.test_golden_retriever;
+            pictureBox.Location = new Point(12, 56);
             pictureBox.Name = "pictureBox";
             pictureBox.Size = new Size(418, 301);
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -47,7 +51,7 @@
             // btnBrowse
             // 
             btnBrowse.BackColor = Color.Silver;
-            btnBrowse.Location = new Point(73, 332);
+            btnBrowse.Location = new Point(73, 376);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(120, 60);
             btnBrowse.TabIndex = 1;
@@ -58,7 +62,7 @@
             // btnClassify
             // 
             btnClassify.BackColor = Color.Silver;
-            btnClassify.Location = new Point(246, 332);
+            btnClassify.Location = new Point(246, 376);
             btnClassify.Name = "btnClassify";
             btnClassify.Size = new Size(120, 60);
             btnClassify.TabIndex = 2;
@@ -66,20 +70,52 @@
             btnClassify.UseVisualStyleBackColor = false;
             btnClassify.Click += btnClassify_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(136, 456);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 21);
+            label1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(73, 456);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 21);
+            label2.TabIndex = 4;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Showcard Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(73, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(305, 33);
+            label3.TabIndex = 5;
+            label3.Text = "DogBreed Detective";
+            // 
             // DogsImageClassification
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
-            ClientSize = new Size(442, 422);
+            ClientSize = new Size(442, 500);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(btnClassify);
             Controls.Add(btnBrowse);
             Controls.Add(pictureBox);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DogsImageClassification";
-            Text = "DogsImageClassification";
+            Text = "DogBreed Detective";
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -87,5 +123,8 @@
         private PictureBox pictureBox;
         private Button btnBrowse;
         private Button btnClassify;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }
